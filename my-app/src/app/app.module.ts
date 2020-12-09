@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import {Routes, RouterModule} from '@angular/router'; 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './shared/material-module/material-module';
 
 
 const routes: Routes = [
@@ -23,6 +24,7 @@ const routes: Routes = [
     AppComponent
   ],
   imports: [
+    MaterialModule,
     BrowserModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(routes)

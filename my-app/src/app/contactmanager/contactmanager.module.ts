@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import {FormsModule} from '@angular/forms'; 
 import {MaterialModule} from '../shared/material-module/material-module'; 
 import {FlexLayoutModule} from '@angular/flex-layout'; 
+
 import { ContactmanagerAppComponent } from './contactmanager-app/contactmanager-app.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { MainContentComponent } from './components/main-content/main-content.component';
@@ -13,12 +14,10 @@ const routes: Routes = [
   {path: '', component: ContactmanagerAppComponent, 
   children: [
     {path: '', component: MainContentComponent }, 
-
   ]
 }, {
-  path: '**', redirectTo:'contactmanager'
-}
-]
+  path: '**', redirectTo:''}
+];
 
 @NgModule({
   declarations: [ContactmanagerAppComponent, ToolbarComponent, MainContentComponent, SidenavComponent],
@@ -27,7 +26,7 @@ const routes: Routes = [
     MaterialModule,
     FormsModule, 
     FlexLayoutModule, 
-    RouterModule.forRoot(routes)
-  ]
+    RouterModule.forChild(routes)
+  ], providers: []
 })
 export class ContactmanagerModule { }
