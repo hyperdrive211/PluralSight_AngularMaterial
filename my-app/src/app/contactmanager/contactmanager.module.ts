@@ -27,6 +27,6 @@ const routes: Routes = [
     FormsModule, 
     FlexLayoutModule, 
     RouterModule.forChild(routes)
-  ], providers: []
+  ], providers: [UserService]
 })
 export class ContactmanagerModule { }
