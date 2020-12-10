@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {BreakpointObserver, BreakpointState} from '@angular/cdk/layout';
+import { UserService } from '../../services/user.service';
+import { Observable } from 'rxjs';
+import { User } from '../../models/user';
 
 
 const SMALL_WIDTH_BREAKPOINT = 720; 
@@ -12,8 +15,12 @@ const SMALL_WIDTH_BREAKPOINT = 720;
 export class SidenavComponent implements OnInit {
 
   public isScreenSmall: boolean; 
-  constructor(private breakPointObserver: BreakpointObserver) {
-   
+  users: Observable<User[]>; 
+
+
+
+  constructor(private breakPointObserver: BreakpointObserver, private userService:UserService) {
+       
    }
 
    
@@ -21,6 +28,13 @@ export class SidenavComponent implements OnInit {
     this.breakPointObserver.observe([`(max-width: ${SMALL_WIDTH_BREAKPOINT}px)`])
     .subscribe((state: BreakpointState) => {
       this.isScreenSmall = state.matches; 
+    })
+
+    this.users = this.userService.users; 
+    this.userService.loadAll(); 
+
+    this.users.subscribe(data => {
+      console.log(data); 
     })
   }
 
