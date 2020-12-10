@@ -9,6 +9,7 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { MainContentComponent } from './components/main-content/main-content.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import {Routes, RouterModule} from '@angular/router'; 
+import { UserService } from './services/user.service';
 
 const routes: Routes = [
   {path: '', component: ContactmanagerAppComponent, 
