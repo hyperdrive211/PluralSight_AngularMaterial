@@ -11,6 +11,7 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
 import {Routes, RouterModule} from '@angular/router'; 
 import { UserService } from './services/user.service';
 import { HttpClientModule } from '@angular/common/http';
+import { NotesComponent } from './components/notes/notes.component';
 
 const routes: Routes = [
   {path: '', component: ContactmanagerAppComponent, 
@@ -23,7 +24,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [ContactmanagerAppComponent, ToolbarComponent, MainContentComponent, SidenavComponent],
+  declarations: [ContactmanagerAppComponent, ToolbarComponent, MainContentComponent, SidenavComponent, NotesComponent],
   imports: [
     CommonModule, 
     MaterialModule,
